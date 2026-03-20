@@ -1,6 +1,9 @@
-# 🤖 AI Document QA System (RAG-based)
+# 🤖 AI Document Chat System (RAG-based)
 
-An intelligent document question-answering system that allows users to query PDF documents and receive precise, context-based answers using semantic search and NLP.
+An intelligent AI-powered system that allows users to **upload PDFs and chat with them** to get context-aware answers using semantic search.
+
+🔗 **Live Demo:**  
+https://coderguru74-ai-document-qa-system-app-streamlit-vtbygk.streamlit.app/
 
 ---
 
@@ -8,44 +11,87 @@ An intelligent document question-answering system that allows users to query PDF
 
 This project implements a **Retrieval-Augmented Generation (RAG)** pipeline that combines:
 
-* 📄 Document Processing (PDF)
+* 📄 Document Processing (PDF parsing)
 * 🧠 Semantic Search (Embeddings + FAISS)
-* 🤖 NLP-based Answer Extraction
+* 💬 Chat-based Query Interface (Streamlit UI)
 
-Instead of returning raw text, the system provides **clean, relevant answers** based on document content.
+Users can upload documents and interact with them like ChatGPT to extract meaningful insights.
 
 ---
 
 ## ✨ Features
 
-* 📥 Load and process PDF documents
+* 📄 Upload and process **multiple PDFs**
+* 💬 ChatGPT-style interface
 * 🔍 Semantic search using vector embeddings
 * ⚡ Fast similarity search with FAISS
-* 🧠 NLP-based question answering (HuggingFace)
+* 🧠 Context-aware answers from documents
+* 🗂️ Expandable source context view
 * 💻 Fully offline (no API required)
-* 🔁 Interactive query system
+* 🌐 Live deployed web application
 
 ---
 
 ## 🛠️ Tech Stack
 
-* Python
-* LangChain
-* FAISS (Vector Database)
-* HuggingFace Transformers
-* Sentence Transformers
+* **Frontend:** Streamlit
+* **Backend:** Python
+* **AI/ML:** LangChain, Sentence Transformers
+* **Vector DB:** FAISS
+* **Document Processing:** PyPDF
+
+# 🤖 AI Document Chat System (RAG-based)
+
+An intelligent AI-powered system that allows users to **upload PDFs and chat with them** to get context-aware answers using semantic search.
+
+🔗 **Live Demo:**  
+https://coderguru74-ai-document-qa-system-app-streamlit-vtbygk.streamlit.app/
+
+---
+
+## 🚀 Overview
+
+This project implements a **Retrieval-Augmented Generation (RAG)** pipeline that combines:
+
+* 📄 Document Processing (PDF parsing)
+* 🧠 Semantic Search (Embeddings + FAISS)
+* 💬 Chat-based Query Interface (Streamlit UI)
+
+Users can upload documents and interact with them like ChatGPT to extract meaningful insights.
+
+---
+
+## ✨ Features
+
+* 📄 Upload and process **multiple PDFs**
+* 💬 ChatGPT-style interface
+* 🔍 Semantic search using vector embeddings
+* ⚡ Fast similarity search with FAISS
+* 🧠 Context-aware answers from documents
+* 🗂️ Expandable source context view
+* 💻 Fully offline (no API required)
+* 🌐 Live deployed web application
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Streamlit
+* **Backend:** Python
+* **AI/ML:** LangChain, Sentence Transformers
+* **Vector DB:** FAISS
+* **Document Processing:** PyPDF
 
 ---
 
 ## 📂 Project Structure
+ai-document-qa-system/
+│── app_streamlit.py # Streamlit web app
+│── app.py # CLI version
+│── data.pdf # Sample document
+│── requirements.txt # Dependencies
+│── README.md # Documentation
 
-```
-rag-project/
-│── app.py              # Main application
-│── data.pdf            # Input document
-│── requirements.txt    # Dependencies
-│── README.md           # Project documentation
-```
 
 ---
 
@@ -54,86 +100,13 @@ rag-project/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/ai-document-qa-system.git
+git clone https://github.com/CoderGuru74/ai-document-qa-system.git
 cd ai-document-qa-system
-```
 
-2. Install dependencies:
-
-```bash
+Install dependencies:
 python -m pip install -r requirements.txt
-```
 
----
+Install dependencies:
+python -m streamlit run app_streamlit.py
 
-## ▶️ Usage
-
-Run the application:
-
-```bash
-python app.py
-```
-
-Then ask questions:
-
-```
-Ask: What is AI?
-```
-
----
-
-## 🧠 How It Works
-
-1. 📄 Loads PDF using PyPDFLoader
-2. ✂️ Splits text into chunks
-3. 🔗 Converts text into embeddings
-4. 📊 Stores embeddings in FAISS
-5. 🔍 Retrieves relevant chunks
-6. 🤖 Uses NLP model to extract final answer
-
----
-
-## 📌 Example Output
-
-```
-Ask: What is AI?
-
-Answer:
-Simulation of human intelligence
-
-Source:
-Artificial Intelligence (AI) refers to the simulation...
-```
-
----
-
-## 💼 Resume Highlight
-
-**AI-Powered Document QA System**
-
-* Built a semantic document retrieval system using FAISS and embeddings
-* Implemented NLP-based question answering using HuggingFace models
-* Designed end-to-end RAG pipeline for efficient document querying
-
----
-
-## 🚀 Future Improvements
-
-* 🌐 Web UI using Streamlit
-* 📁 Support for multiple documents
-* 💬 Chat-style interface
-* ☁️ Deployment (AWS / Vercel)
-
----
-
-## 👨‍💻 Author
-
-**Shubham Raj**
-
-* LinkedIn: www.linkedin.com/in/shubham-raj-b88206300
-
----
-
-## ⭐ If you like this project
-
-Give it a star ⭐ and share it!
+## 📂 Project Structure
