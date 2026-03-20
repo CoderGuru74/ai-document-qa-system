@@ -1,11 +1,8 @@
 import os
-
-
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
-
 
 # -------------------------
 # STEP 1: Load PDF
@@ -23,7 +20,7 @@ text_splitter = CharacterTextSplitter(
 docs = text_splitter.split_documents(documents)
 
 # -------------------------
-# STEP 3: Embeddings (FREE)
+# STEP 3: Embeddings
 # -------------------------
 embeddings = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"
@@ -39,33 +36,19 @@ print("✅ AI Document Search System Ready!\n")
 # -------------------------
 # STEP 5: Query System
 # -------------------------
-
-from transformers import pipeline
-
-# Load lightweight local model
-qa_model = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
-
-print("✅ Smart AI System Ready!\n")
-
 while True:
     query = input("Ask: ")
 
     if query.lower() in ["exit", "quit"]:
+        print("👋 Exiting system...")
         break
 
+    # Retrieve relevant chunks
     results = db.similarity_search(query, k=2)
 
-    context = " ".join([r.page_content for r in results])
+    print("\n🔍 Top Relevant Results:\n")
 
-    # AI Answer
-    answer = qa_model(
-        question=query,
-        context=context
-    )
-
-    print("\n🤖 Answer:\n")
-    print(answer["answer"])
-
-    print("\n📄 Source Context:\n")
-    print(context[:300])
-    print("\n----------------------\n")
+    for i, r in enumerate(results):
+        print(f"Result {i+1}:\n")
+        print(r.page_content[:500])
+        print("\n----------------------\n")
