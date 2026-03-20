@@ -1,16 +1,11 @@
 import os
 
-# OPTIONAL: Uncomment if you want OpenAI (and have billing)
-# os.environ["OPENAI_API_KEY"] = "your_api_key_here"
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
-# OPTIONAL (only if using OpenAI)
-# from langchain_openai import OpenAI
-# from langchain.chains import RetrievalQA
 
 # -------------------------
 # STEP 1: Load PDF
