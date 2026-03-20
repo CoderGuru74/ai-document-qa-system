@@ -130,8 +130,7 @@ Artificial Intelligence (AI) refers to the simulation...
 
 **Shubham Raj**
 
-* GitHub: https://github.com/yourusername
-* LinkedIn: https://linkedin.com/in/yourprofile
+* LinkedIn: www.linkedin.com/in/shubham-raj-b88206300
 
 ---
 
